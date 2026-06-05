@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Games | Play Free Online | ArcadePixelMax</title>
+  <meta name="description" content="Play the best free Educational games online on ArcadePixelMax. Page 1 of our curated collection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card: rgba(22, 28, 45, 0.7);
+      --accent: #6c5ce7;
+      --accent-glow: rgba(108, 92, 231, 0.4);
+      --text-white: #ffffff;
+      --text-gray: #a0aec0;
+      --neon-green: #00f2fe;
+      --neon-pink: #ff007f;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(circle at top, #1a1b36 0%, var(--bg-dark) 70%);
+      color: var(--text-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Top Navbar Styles */
+    .top-navbar {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 70px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .top-nav-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .top-nav-logo span {
+      -webkit-text-fill-color: initial;
+    }
+
+    .top-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-nav-item {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .top-nav-item:hover, .top-nav-item.active {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Dropdown Styles */
+    .top-nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .top-nav-dropdown-btn {
+      background: none;
+      border: none;
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .top-nav-dropdown-btn:hover, .top-nav-dropdown.active .top-nav-dropdown-btn {
+      color: var(--text-white);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .top-nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: #111519;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      z-index: 1010;
+      padding: 8px 0;
+      margin-top: 5px;
+    }
+
+    .top-nav-dropdown-content a {
+      color: var(--text-gray);
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .top-nav-dropdown-content a:hover, .top-nav-dropdown-content a.active {
+      color: var(--text-white);
+      background: var(--accent);
+    }
+
+    .top-nav-dropdown:hover .top-nav-dropdown-content {
+      display: block;
+    }
+
+    /* Toggle button for Mobile */
+    .top-nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 24px;
+      height: 18px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1020;
+    }
+
+    .top-nav-toggle .toggle-bar {
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      padding: 15px 20px 8px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      display: none;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--text-gray) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Categories Navigation inside Footer */
+    .categories-nav {
+      padding: 15px 0;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .categories-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .category-link {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .category-link:hover, .category-link.active {
+      color: var(--text-white);
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 16px;
+      box-shadow: 0 0 40px var(--accent-glow);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .thumbnail-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+      background: #000;
+    }
+
+    .thumbnail-wrapper img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card:hover .thumbnail-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-white);
+    }
+
+    .card-description {
+      font-size: 0.95rem;
+      color: var(--text-gray);
+      margin-bottom: 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .play-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
+      color: var(--text-white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+    }
+
+    .play-btn:hover {
+      background: #7d6ef9;
+      box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    }
+
+    .play-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 40px;
+      padding: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .page-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-gray);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .page-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-white);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .page-link.active {
+      background: var(--accent);
+      color: var(--text-white);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(108, 92, 231, 0.3);
+    }
+
+    .page-link.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .page-arrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-gray);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .top-nav-toggle {
+        display: flex;
+      }
+
+      .top-nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 250px;
+        height: calc(100vh - 70px);
+        background: #0b0f19;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 20px;
+        gap: 10px;
+        transition: right 0.3s ease;
+        z-index: 999;
+      }
+
+      .top-nav-menu.open {
+        right: 0;
+      }
+
+      .top-nav-item, .top-nav-dropdown-btn {
+        width: 100%;
+        text-align: left;
+        padding: 12px 15px;
+      }
+
+      .top-nav-dropdown-content {
+        position: static;
+        display: block;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        margin-top: 0;
+        padding-left: 15px;
+      }
+
+      .top-nav-toggle.active .toggle-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(2) {
+        opacity: 0;
+      }
+      .top-nav-toggle.active .toggle-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+      .subtitle {
+        font-size: 0.8rem;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="top-navbar">
+    <div class="top-nav-container">
+      <a href="index.html" class="top-nav-logo">
+        <span>🎮</span> ArcadePixelMax
+      </a>
+
+      <button class="top-nav-toggle" id="topNavToggle" aria-label="Toggle menu">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+      <div class="top-nav-menu" id="topNavMenu">
+        <a href="index.html" class="top-nav-item ">Home</a>
+        <a href="category-casual.html" class="top-nav-item ">Casual</a>
+        <a href="category-puzzle.html" class="top-nav-item ">Puzzle</a>
+        <a href="category-adventure.html" class="top-nav-item ">Adventure</a>
+        <a href="category-simulation.html" class="top-nav-item ">Simulation</a>
+        <a href="category-agility.html" class="top-nav-item ">Agility</a>
+        <a href="category-shooter.html" class="top-nav-item ">Shooter</a>
+        <div class="top-nav-dropdown active">
+          <button class="top-nav-dropdown-btn">More ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="category-dress-up.html" class="">Dress-up</a>
+            <a href="category-racing-driving.html" class="">Racing & Driving</a>
+            <a href="category-strategy.html" class="">Strategy</a>
+            <a href="category-match-3.html" class="">Match-3</a>
+            <a href="category-battle.html" class="">Battle</a>
+            <a href="category-io.html" class="">.IO</a>
+            <a href="category-merge.html" class="">Merge</a>
+            <a href="category-mahjong-connect.html" class="">Mahjong & Connect</a>
+            <a href="category-sports.html" class="">Sports</a>
+            <a href="category-cards.html" class="">Cards</a>
+            <a href="category-educational.html" class="active">Educational</a>
+            <a href="category-bubble-shooter.html" class="">Bubble Shooter</a>
+            <a href="category-basketball.html" class="">Basketball</a>
+            <a href="category-football.html" class="">Football</a>
+            <a href="category-cooking.html" class="">Cooking</a>
+            <a href="category-boardgames.html" class="">Boardgames</a>
+            <a href="category-care.html" class="">Care</a>
+            <a href="category-art.html" class="">Art</a>
+            <a href="category-bike.html" class="">Bike</a>
+            <a href="category-car.html" class="">Car</a>
+            <a href="category-controller.html" class="">Controller</a>
+            <a href="category-escape.html" class="">Escape</a>
+            <a href="category-flash.html" class="">Flash</a>
+            <a href="category-fps.html" class="">FPS</a>
+            <a href="category-horror.html" class="">Horror</a>
+            <a href="category-mahjong.html" class="">Mahjong</a>
+            <a href="category-minecraft.html" class="">Minecraft</a>
+            <a href="category-pool.html" class="">Pool</a>
+            <a href="category-soccer.html" class="">Soccer</a>
+            <a href="category-stickman.html" class="">Stickman</a>
+            <a href="category-thinky.html" class="">Thinky</a>
+            <a href="category-tower-defense.html" class="">Tower Defense</a>
+            <a href="category-quiz.html" class="">Quiz</a>
+            <a href="category-mobile2-095.html" class="">Mobile2,095</a>
+            <a href="category-destroy254.html" class="">Destroy254</a>
+            <a href="category-can-t-stop-playing212.html" class="">Can’t Stop Playing212</a>
+            <a href="category-incremental386.html" class="">Incremental386</a>
+            <a href="category-3d1-383.html" class="">3D1,383</a>
+            <a href="category-battle523.html" class="">Battle523</a>
+            <a href="category-arena254.html" class="">Arena254</a>
+            <a href="category-fps175.html" class="">FPS175</a>
+            <a href="category-idle.html" class="">Idle</a>
+            <a href="category-physics367.html" class="">Physics367</a>
+            <a href="category-mouse1-698.html" class="">Mouse1,698</a>
+            <a href="category-idle445.html" class="">Idle445</a>
+            <a href="category-jigsaw.html" class="">Jigsaw</a>
+            <a href="category-management.html" class="">Management</a>
+            <a href="category-farming.html" class="">Farming</a>
+            <a href="category-relaxing221.html" class="">Relaxing221</a>
+            <a href="category-farming87.html" class="">Farming87</a>
+            <a href="category-collect566.html" class="">Collect566</a>
+            <a href="category-casual969.html" class="">Casual969</a>
+            <a href="category-sniper39.html" class="">Sniper39</a>
+            <a href="category-controller59.html" class="">Controller59</a>
+            <a href="category-cartoon75.html" class="">Cartoon75</a>
+            <a href="category-gun241.html" class="">Gun241</a>
+            <a href="category-party23.html" class="">Party23</a>
+            <a href="category-fps-game.html" class="">FPS game</a>
+            <a href="category-tank.html" class="">Tank</a>
+            <a href="category-war137.html" class="">War137</a>
+            <a href="category-tank58.html" class="">Tank58</a>
+            <a href="category-tank-game.html" class="">tank game</a>
+            <a href="category-snake.html" class="">Snake</a>
+            <a href="category-5-minute-fun24.html" class="">5-minute fun24</a>
+            <a href="category-avoid297.html" class="">Avoid297</a>
+            <a href="category-snake40.html" class="">Snake40</a>
+            <a href="category-color195.html" class="">Color195</a>
+          </div>
+        </div>
+        <div class="top-nav-dropdown ">
+          <button class="top-nav-dropdown-btn">About ▾</button>
+          <div class="top-nav-dropdown-content">
+            <a href="contact.html" class="">Contact Us</a>
+            <a href="privacy.html" class="">Privacy Policy</a>
+            <a href="terms.html" class="">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Educational Games</h1>
+    <p class="subtitle">Play the best free Educational games online on ArcadePixelMax. Page 1 of our curated collection.</p>
+  </header>
+
+    <!-- Dedicated Search Bar Row -->
+  <div class="search-bar-row">
+    <div class="search-bar-row-container">
+      <input type="text" id="searchInput" placeholder="Search for your favorite games..." autocomplete="off">
+      <div id="searchSuggestions" class="search-suggestions"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="grid">
+            <!-- Card: Pentaword -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/451.webp" alt="Pentaword Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Pentaword</h2>
+          <p class="card-description">Guess the hidden five-letter word in just six tries! Use logic, spelling, and word skills in this brain teaser. Can you crack the Pentaword?</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="pentaword.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Fantasy Math Number -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/493.webp" alt="Fantasy Math Number Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Fantasy Math Number</h2>
+          <p class="card-description">Embark on an epic adventure in Fantasy Math Number! Test your math skills in exciting battles against monsters by solving addition, subtraction, and multiplication problems. Every correct answer brings you closer to victory! Power up, defeat enemies, and aim for the highest score in this fun and educational math quest!</p>
+          <div class="tag-container">
+            <span class="tag">Educational</span>
+          </div>
+          <a href="fantasy-math-number.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: 3D Kid Sliding Puzzle -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/534.webp" alt="3D Kid Sliding Puzzle Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">3D Kid Sliding Puzzle</h2>
+          <p class="card-description">We've taken the classic sliding puzzle into a whole new 3D world. Kids will need to slide the scrambled blocks to rearrange them and complete adorable cartoon pictures, such as little animals, vehicles, and fairy-tale characters. The game features vibrant colors and lively 3D models that will immediately capture a child's attention. Not only does it provide hours of fun, but it also helps develop a child's logical thinking, spatial awareness, and problem-solving skills.</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="3d-kid-sliding-puzzle.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Math Runner -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/538.webp" alt="Math Runner Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Math Runner</h2>
+          <p class="card-description">Challenge your mind and reflexes in this fast-paced arithmetic adventure! Solve math problems on the run, dodge obstacles, and race against time to achieve the highest score. Perfect for players of all ages looking to sharpen their math skills while enjoying thrilling gameplay.</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="math-runner.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Cross Connect Word -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/658.webp" alt="Cross Connect Word Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Cross Connect Word</h2>
+          <p class="card-description">Fun and relaxing crossword puzzle!
+
+Cross Word Connect is a fun but challenging word game.
+Enjoy modern word game with the combine of word search and crossword! In this fantastic crossword puzzle, you will improve your vocabulary and spelling skills.</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="cross-connect-word.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Sprunki Coloring Book -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/665.webp" alt="Sprunki Coloring Book Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Sprunki Coloring Book</h2>
+          <p class="card-description">Dive into a colorful adventure with Sprunki Coloring Book, a delightful game designed for kids and adults alike. Choose from a wide variety of adorable Sprunki characters, captivating landscapes, and fun designs to color your way. Whether you're a budding artist or simply looking to relax, Sprunki Coloring Book offers endless possibilities for self-expression.
+Start coloring today and discover the joy of creativity with Sprunki Coloring Book!</p>
+          <div class="tag-container">
+            <span class="tag">Art</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="sprunki-coloring-book.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Math Block -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/708.webp" alt="Math Block Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Math Block</h2>
+          <p class="card-description">Math Block is a brain-teasing puzzle game where you slide numbered blocks and operators on a grid to form valid math equations. Match the target value using addition, subtraction, multiplication, and division to earn stars and progress through 500 challenging levels!</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="math-block.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Word Search Universe -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/710.webp" alt="Word Search Universe Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Word Search Universe</h2>
+          <p class="card-description">Word Search Universe is a fun and relaxing puzzle game where you search for hidden words in a grid. The game has 20 chapters, and each one comes with easy, medium, and hard levels to match your skill. In every level, you need to find 6 hidden words. If you get stuck, you can use a hint to help you out. It's a great way to have fun, improve your vocabulary, and keep your brain sharp!</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="word-search-universe.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Zombie Rodeo Multiplication -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/884.webp" alt="Zombie Rodeo Multiplication Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Zombie Rodeo Multiplication</h2>
+          <p class="card-description">Don't let your zombie lose his head or other body parts in this Halloween themed multiplication math game. Answer the multiplication problem correctly before time runs out so your zombie doesn't lose a body part. If you answer incorrectly or time runs out before you get the correct answer, a body part falls off of your zombie. Once all of his body parts fall off, the game is over.  See how far you can go and earn coins to get upgrades.  Four difficulty settings to choose from.</p>
+          <div class="tag-container">
+            <span class="tag">Educational</span>
+          </div>
+          <a href="zombie-rodeo-multiplication.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Code Runner: Binary Confusion -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/906.webp" alt="Code Runner: Binary Confusion Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Code Runner: Binary Confusion</h2>
+          <p class="card-description">A fast-paced binary runner where logic and reflexes collide. Match the rule, dodge the wrong digit — survive the code! .A psychological runner puzzle where every second counts and one rule could change everything.</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="code-runner-binary-confusion.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Cargo Path Puzzle -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/908.webp" alt="Cargo Path Puzzle Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Cargo Path Puzzle</h2>
+          <p class="card-description">Cargo Path Puzzle is a challenging 3D puzzle game that tests both logic and movement strategy. Navigate through complex levels filled with collapsing platforms, ice slides, trampolines, directional blocks, and deadly voids. Every level has only one correct path, so you'll need to think ahead and plan each move wisely. A single wrong step could trap you or block the way forward.</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="cargo-path-puzzle.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Tralala Connect -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/945.webp" alt="Tralala Connect Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Tralala Connect</h2>
+          <p class="card-description">Tralala Connect – the ultimate Italian Brainrot meme puzzle!
+Find and connect matching tiles featuring your favorite absurd meme characters.
+Sharpen your focus and logic through 15 increasingly chaotic levels.
+Unlock all 45 stars if your brain can handle the rot.
+Mamma mia, it's peak concentration with a spicy twist!</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="tralala-connect.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Dino Ranch -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/946.webp" alt="Dino Ranch Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Dino Ranch</h2>
+          <p class="card-description">JON & BLITZ - IT’S VELOCI-TIME!
+• Throwing the lasso to the escaped compies
+• Dodging herds of ankylosaurus.
+• Finding the naughty compies.
+• Feeding Angus.
+• Flying and dodging objects with Pteddy
+• Moving the dinosaurs to the stable.
+• Challenging the Trihorn Raptor to a race.
+• Helping the compies to jump across the river.</p>
+          <div class="tag-container">
+            <span class="tag">Casual</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="dino-ranch.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Math Duck -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/982.webp" alt="Math Duck Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Math Duck</h2>
+          <p class="card-description">You play as a fearless duck who battles enemies not with brute force, but with math smarts.
+
+The rules are simple but addictive:
+- Pick from shuffled number cards and combine them to make 10.
+- Each correct match becomes your attack to damage enemies.
+- Defeat foes, earn XP, and level up your duck!
+
+Every level-up lets you choose from 3 unique upgrades. Each run is different, and your choices shape the way your duck fights.
+
+Sharpen your mind, master the numbers, and guide your duck to victory!</p>
+          <div class="tag-container">
+            <span class="tag">Cards</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="math-duck.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Sudoku Vault -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1081.webp" alt="Sudoku Vault Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Sudoku Vault</h2>
+          <p class="card-description">Sudoku Vault is a logic-based puzzle game featuring 4x4, 6x6, and 9x9 boards — each with four difficulty levels: Basic, Normal, Hard, and Expert. Whether you're a beginner or an expert, every grid offers a fresh challenge for your mind. Use smart NOTES to keep track of possibilities, and when you want to check your progress, tap the CHECK button — it will remove incorrect inputs and lock the correct ones, helping you stay focused on the solution.</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="sudoku-vault.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Imposter Coloring Book -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1135.webp" alt="Imposter Coloring Book Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Imposter Coloring Book</h2>
+          <p class="card-description">Get ready for a colorful twist on the mystery and excitement of the Imposter Coloring Book! Inspired by the thrilling world of imposters, this coloring app lets you bring your favorite characters to life with vibrant colors and unique brush styles. Choose from various brushes, including pastel, watercolor, and pencil, to add a unique touch to each crewmate, imposter, and spaceship scene. Whether you prefer bold colors or a soft pastel look, every coloring page is yours to make unique.</p>
+          <div class="tag-container">
+            <span class="tag">Art</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="imposter-coloring-book.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Find The Missing Part -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1197.webp" alt="Find The Missing Part Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Find The Missing Part</h2>
+          <p class="card-description">With 100 levels of increasingly challenging puzzles, this game will put your observation skills to the test like never before. Your task is to carefully examine the image and identify the missing sections from a set of 15 options provided. With only seconds to spare, you must make swift and accurate selections to complete the puzzle.</p>
+          <div class="tag-container">
+            <span class="tag">Educational</span>
+          </div>
+          <a href="find-the-missing-part.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Chicken Math -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1207.webp" alt="Chicken Math Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Chicken Math</h2>
+          <p class="card-description">I am Archimedes. I've been trying to solve this difficult problem for a week, and those chickens have stolen my numbers again. Grab the rifle and head to the backyard. Find and retrieve my numbers. Just be careful — I need the correct numbers!</p>
+          <div class="tag-container">
+            <span class="tag">Shooter</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="chicken-math.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+
+      <!-- Card: Brainrot Memory -->
+      <article class="card">
+        <div class="thumbnail-wrapper">
+          <img src="images/1275.webp" alt="Brainrot Memory Cover" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Brainrot Memory</h2>
+          <p class="card-description">Memory Brainrot: Boost Your Brain with Meme Power!
+
+Flip cards, match pairs, and meet iconic characters from the Italian Brainrot meme universe! Play in a vibrant cartoon world, train your memory, and unlock chaotic fun. With two difficulty levels and dozens of legendary meme heroes to discover, this game is both brain-boosting and hilarious. Dive into pure meme madness and rot your brain... but in the best way! ??</p>
+          <div class="tag-container">
+            <span class="tag">Puzzle</span>
+<span class="tag">Educational</span>
+          </div>
+          <a href="brainrot-memory.html" class="play-btn">Play Now &rarr;</a>
+        </div>
+      </article>
+    </div>
+    
+  </div>
+
+  <footer>
+      <nav class="categories-nav">
+    <div class="categories-container">
+      <a href="index.html" class="category-link ">All Games</a>
+      <a href="category-io.html" class="category-link ">.IO</a>
+      <a href="category-3d1-383.html" class="category-link ">3D1,383</a>
+      <a href="category-5-minute-fun24.html" class="category-link ">5-minute fun24</a>
+      <a href="category-adventure.html" class="category-link ">Adventure</a>
+      <a href="category-agility.html" class="category-link ">Agility</a>
+      <a href="category-arena254.html" class="category-link ">Arena254</a>
+      <a href="category-art.html" class="category-link ">Art</a>
+      <a href="category-avoid297.html" class="category-link ">Avoid297</a>
+      <a href="category-basketball.html" class="category-link ">Basketball</a>
+      <a href="category-battle.html" class="category-link ">Battle</a>
+      <a href="category-battle523.html" class="category-link ">Battle523</a>
+      <a href="category-bike.html" class="category-link ">Bike</a>
+      <a href="category-boardgames.html" class="category-link ">Boardgames</a>
+      <a href="category-bubble-shooter.html" class="category-link ">Bubble Shooter</a>
+      <a href="category-can-t-stop-playing212.html" class="category-link ">Can’t Stop Playing212</a>
+      <a href="category-car.html" class="category-link ">Car</a>
+      <a href="category-cards.html" class="category-link ">Cards</a>
+      <a href="category-care.html" class="category-link ">Care</a>
+      <a href="category-cartoon75.html" class="category-link ">Cartoon75</a>
+      <a href="category-casual.html" class="category-link ">Casual</a>
+      <a href="category-casual969.html" class="category-link ">Casual969</a>
+      <a href="category-collect566.html" class="category-link ">Collect566</a>
+      <a href="category-color195.html" class="category-link ">Color195</a>
+      <a href="category-controller.html" class="category-link ">Controller</a>
+      <a href="category-controller59.html" class="category-link ">Controller59</a>
+      <a href="category-cooking.html" class="category-link ">Cooking</a>
+      <a href="category-destroy254.html" class="category-link ">Destroy254</a>
+      <a href="category-dress-up.html" class="category-link ">Dress-up</a>
+      <a href="category-educational.html" class="category-link active">Educational</a>
+      <a href="category-escape.html" class="category-link ">Escape</a>
+      <a href="category-farming.html" class="category-link ">Farming</a>
+      <a href="category-farming87.html" class="category-link ">Farming87</a>
+      <a href="category-flash.html" class="category-link ">Flash</a>
+      <a href="category-football.html" class="category-link ">Football</a>
+      <a href="category-fps.html" class="category-link ">FPS</a>
+      <a href="category-fps-game.html" class="category-link ">FPS game</a>
+      <a href="category-fps175.html" class="category-link ">FPS175</a>
+      <a href="category-gun241.html" class="category-link ">Gun241</a>
+      <a href="category-horror.html" class="category-link ">Horror</a>
+      <a href="category-idle.html" class="category-link ">Idle</a>
+      <a href="category-idle445.html" class="category-link ">Idle445</a>
+      <a href="category-incremental386.html" class="category-link ">Incremental386</a>
+      <a href="category-jigsaw.html" class="category-link ">Jigsaw</a>
+      <a href="category-mahjong.html" class="category-link ">Mahjong</a>
+      <a href="category-mahjong-connect.html" class="category-link ">Mahjong & Connect</a>
+      <a href="category-management.html" class="category-link ">Management</a>
+      <a href="category-match-3.html" class="category-link ">Match-3</a>
+      <a href="category-merge.html" class="category-link ">Merge</a>
+      <a href="category-minecraft.html" class="category-link ">Minecraft</a>
+      <a href="category-mobile2-095.html" class="category-link ">Mobile2,095</a>
+      <a href="category-mouse1-698.html" class="category-link ">Mouse1,698</a>
+      <a href="category-party23.html" class="category-link ">Party23</a>
+      <a href="category-physics367.html" class="category-link ">Physics367</a>
+      <a href="category-pool.html" class="category-link ">Pool</a>
+      <a href="category-puzzle.html" class="category-link ">Puzzle</a>
+      <a href="category-quiz.html" class="category-link ">Quiz</a>
+      <a href="category-racing-driving.html" class="category-link ">Racing & Driving</a>
+      <a href="category-relaxing221.html" class="category-link ">Relaxing221</a>
+      <a href="category-shooter.html" class="category-link ">Shooter</a>
+      <a href="category-simulation.html" class="category-link ">Simulation</a>
+      <a href="category-snake.html" class="category-link ">Snake</a>
+      <a href="category-snake40.html" class="category-link ">Snake40</a>
+      <a href="category-sniper39.html" class="category-link ">Sniper39</a>
+      <a href="category-soccer.html" class="category-link ">Soccer</a>
+      <a href="category-sports.html" class="category-link ">Sports</a>
+      <a href="category-stickman.html" class="category-link ">Stickman</a>
+      <a href="category-strategy.html" class="category-link ">Strategy</a>
+      <a href="category-tank.html" class="category-link ">Tank</a>
+      <a href="category-tank-game.html" class="category-link ">tank game</a>
+      <a href="category-tank58.html" class="category-link ">Tank58</a>
+      <a href="category-thinky.html" class="category-link ">Thinky</a>
+      <a href="category-tower-defense.html" class="category-link ">Tower Defense</a>
+      <a href="category-war137.html" class="category-link ">War137</a>
+    </div>
+  </nav>
+    <p style="margin-top: 15px;">&copy; 2026 Educational Games. Deployed on ArcadePixelMax.github.io.</p>
+    <div class="footer-links" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; align-items: center;">
+  <a href="contact.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Contact Us</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="privacy.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Privacy Policy</a>
+  <span style="color: rgba(255, 255, 255, 0.15);">|</span>
+  <a href="terms.html" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">Terms of Service</a>
+</div>
+
+  </footer>
+
+  <script src="ads-manager.js" defer></script>
+  <script src="search.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const topNavToggle = document.getElementById('topNavToggle');
+      const topNavMenu = document.getElementById('topNavMenu');
+      if (topNavToggle && topNavMenu) {
+        topNavToggle.addEventListener('click', () => {
+          topNavMenu.classList.toggle('open');
+          topNavToggle.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
